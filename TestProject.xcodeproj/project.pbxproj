@@ -97,6 +97,10 @@
 		185E700218212D2000682E5B /* DZActivityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185E700018212D2000682E5B /* DZActivityViewController.xib */; };
 		185E700418212E2500682E5B /* btnBackGround.png in Resources */ = {isa = PBXBuildFile; fileRef = 185E700318212E2500682E5B /* btnBackGround.png */; };
 		185E70091821411B00682E5B /* DZActivityImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 185E70081821411B00682E5B /* DZActivityImageViewController.m */; };
+		186C2A241821F98700FA5067 /* DZFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 186C2A221821F98700FA5067 /* DZFullScreenViewController.m */; };
+		186C2A251821F98700FA5067 /* DZFullScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186C2A231821F98700FA5067 /* DZFullScreenViewController.xib */; };
+		186C2A271821FFED00FA5067 /* zoomBig.png in Resources */ = {isa = PBXBuildFile; fileRef = 186C2A261821FFED00FA5067 /* zoomBig.png */; };
+		186C2A291822035100FA5067 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = 186C2A281822035100FA5067 /* close.png */; };
 		187B4CA1181F9AF800ABEAEE /* vido.png in Resources */ = {isa = PBXBuildFile; fileRef = 187B4C9D181F9AF800ABEAEE /* vido.png */; };
 		187B4CA2181F9AF800ABEAEE /* vido1.png in Resources */ = {isa = PBXBuildFile; fileRef = 187B4C9E181F9AF800ABEAEE /* vido1.png */; };
 		187B4CA3181F9AF800ABEAEE /* vido2.png in Resources */ = {isa = PBXBuildFile; fileRef = 187B4C9F181F9AF800ABEAEE /* vido2.png */; };
@@ -241,6 +245,11 @@
 		185E700318212E2500682E5B /* btnBackGround.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnBackGround.png; sourceTree = "<group>"; };
 		185E70071821411B00682E5B /* DZActivityImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZActivityImageViewController.h; sourceTree = "<group>"; };
 		185E70081821411B00682E5B /* DZActivityImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZActivityImageViewController.m; sourceTree = "<group>"; };
+		186C2A211821F98700FA5067 /* DZFullScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZFullScreenViewController.h; sourceTree = "<group>"; };
+		186C2A221821F98700FA5067 /* DZFullScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZFullScreenViewController.m; sourceTree = "<group>"; };
+		186C2A231821F98700FA5067 /* DZFullScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DZFullScreenViewController.xib; sourceTree = "<group>"; };
+		186C2A261821FFED00FA5067 /* zoomBig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zoomBig.png; sourceTree = "<group>"; };
+		186C2A281822035100FA5067 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
 		187B4C9D181F9AF800ABEAEE /* vido.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vido.png; sourceTree = "<group>"; };
 		187B4C9E181F9AF800ABEAEE /* vido1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vido1.png; sourceTree = "<group>"; };
 		187B4C9F181F9AF800ABEAEE /* vido2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vido2.png; sourceTree = "<group>"; };
@@ -452,6 +461,9 @@
 				180CC5A11817B2E00023F05F /* DZLookPDFViewController.h */,
 				180CC5A21817B2E00023F05F /* DZLookPDFViewController.m */,
 				180CC5A31817B2E00023F05F /* DZLookPDFViewController.xib */,
+				186C2A211821F98700FA5067 /* DZFullScreenViewController.h */,
+				186C2A221821F98700FA5067 /* DZFullScreenViewController.m */,
+				186C2A231821F98700FA5067 /* DZFullScreenViewController.xib */,
 			);
 			name = CelebrityHallController;
 			sourceTree = "<group>";
@@ -494,7 +506,9 @@
 				1827D07F1818C25F00118CDA /* kuz3.png */,
 				185E700318212E2500682E5B /* btnBackGround.png */,
 				1827D0801818C25F00118CDA /* kuz4.png */,
+				186C2A261821FFED00FA5067 /* zoomBig.png */,
 				18DEAC1E181CA1AA00189573 /* btnSelected.png */,
+				186C2A281822035100FA5067 /* close.png */,
 				1827D0751818C22300118CDA /* xiz3.png */,
 				18DEAC18181C1E6700189573 /* left.png */,
 				18DEAC19181C1E6700189573 /* right.png */,
@@ -766,6 +780,9 @@
 				185E6FFC18210F9600682E5B /* block2_image1.png in Resources */,
 				185E700218212D2000682E5B /* DZActivityViewController.xib in Resources */,
 				185E700418212E2500682E5B /* btnBackGround.png in Resources */,
+				186C2A251821F98700FA5067 /* DZFullScreenViewController.xib in Resources */,
+				186C2A271821FFED00FA5067 /* zoomBig.png in Resources */,
+				186C2A291822035100FA5067 /* close.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -803,6 +820,7 @@
 				185E6FCF1820FCD000682E5B /* DZCharacterDetailViewController.m in Sources */,
 				185E700118212D2000682E5B /* DZActivityViewController.m in Sources */,
 				185E70091821411B00682E5B /* DZActivityImageViewController.m in Sources */,
+				186C2A241821F98700FA5067 /* DZFullScreenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

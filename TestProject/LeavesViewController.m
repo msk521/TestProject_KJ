@@ -11,7 +11,7 @@
 @implementation LeavesViewController
 
 - (void) initialize {
-   leavesView = [[LeavesView alloc] initWithFrame:CGRectZero];
+   self.leavesView = [[LeavesView alloc] initWithFrame:CGRectZero];
 }
 
 - (id)initWithNibName:(NSString *)nibName bundle:(NSBundle *)nibBundle
@@ -32,7 +32,7 @@
 }
 
 - (void)dealloc {
-	[leavesView release];
+	[self.leavesView release];
     [super dealloc];
 }
 
@@ -50,17 +50,17 @@
 
 - (void)loadView {
 	[super loadView];
-	leavesView.frame = self.view.bounds;
-	NSLog(@"leavesView;%f",leavesView.frame.size.height);
-	leavesView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-	[self.view addSubview:leavesView];
+	self.leavesView.frame = self.view.bounds;
+	NSLog(@"leavesView;%f",self.leavesView.frame.size.height);
+	self.leavesView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+	[self.view addSubview:self.leavesView];
 }
 
 - (void) viewDidLoad {
 	[super viewDidLoad];
-	leavesView.dataSource = self;
-	leavesView.delegate = self;
-	[leavesView reloadData];
+	self.leavesView.dataSource = self;
+	self.leavesView.delegate = self;
+	[self.leavesView reloadData];
 }
 
 @end

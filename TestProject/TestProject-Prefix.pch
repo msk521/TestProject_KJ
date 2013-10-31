@@ -15,8 +15,8 @@
   #import "DZProjectUtil.h"
 #endif
 
-#ifdef ISMOVENSLOG
-#    define NSLog(...) NSLog(__VA_ARGS__)
-#else
-#    define NSLog(...) {}
-#endif
+//#ifdef ISMOVENSLOG
+//#    define NSLog(...) NSLog(__VA_ARGS__)
+//#else
+//#    define NSLog(...) {}
+//#endif

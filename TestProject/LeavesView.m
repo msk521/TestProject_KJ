@@ -346,8 +346,7 @@ CGFloat distance(CGPoint a, CGPoint b);
 
 - (void) layoutSubviews {
 	[super layoutSubviews];
-	
-	
+
 	if (!CGSizeEqualToSize(pageSize, self.bounds.size)) {
 		pageSize = self.bounds.size;
 		
