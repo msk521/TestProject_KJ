@@ -7,13 +7,12 @@
 //
 
 #import "DZCelebrityHallViewController.h"
-#import "DZFullScreenViewController.h"
 #import "DZAppDelegate.h"
 
 @interface DZCelebrityHallViewController (){
 	NSMutableArray *images;
 	NSMutableArray *imagesPath;
-	DZFullScreenViewController *fullScreen;
+	
 }
 
 @end
@@ -85,27 +84,44 @@ CGAffineTransform aspectFit(CGRect innerRect, CGRect outerRect) {
 
 -(void)jumpToFullScreen:(id)sender{
 	NSString *imagePath = [imagesPath objectAtIndex:self.leavesView.currentPageIndex];
-	fullScreen = [[DZFullScreenViewController alloc] init];
+	self.fullScreen = [[DZFullScreenViewController alloc] init];
+	__weak DZCelebrityHallViewController *main = self;
+	self.fullScreen.closeBlock = ^(int a){
+		[main shakeToShow:main.fullScreen.view scale:0];
+		double delayInSeconds = 0.5;
+		dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+		dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+			[main.fullScreen.view removeFromSuperview];
+		});
+	};
 	DZAppDelegate *dzDelegate = [[UIApplication sharedApplication] delegate];
-	fullScreen.imageURL = imagePath;
-	[dzDelegate.viewController.view addSubview:fullScreen.view];
-	[self shakeToShow:fullScreen.view];
+	self.fullScreen.imageURL = imagePath;
+	[dzDelegate.viewController.view addSubview:self.fullScreen.view];
+	[self shakeToShow:self.fullScreen.view scale:1];
 }
 
 //*************放大过程中出现的缓慢动画*************
-- (void) shakeToShow:(UIView*)aView{
+- (void) shakeToShow:(UIView*)aView scale:(int)scale{
+	float max = 0;
+	float min = 0;
+	if (scale == 1) {
+		max = 1.0f;
+		min = 0.1f;
+	}
+	
+	if (scale == 0) {
+		max = 0.1f;
+		min = 1.0f;
+	}
 	CAKeyframeAnimation* animation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
 	animation.duration = 0.5;
-	
 	NSMutableArray *values = [NSMutableArray array];
-	[values addObject:[NSValue valueWithCATransform3D:CATransform3DMakeScale(0.1, 0.1, 1.0)]];
-	//    [values addObject:[NSValue valueWithCATransform3D:CATransform3DMakeScale(1.2, 1.2, 1.0)]];
-	//    [values addObject:[NSValue valueWithCATransform3D:CATransform3DMakeScale(0.9, 0.9, 1.0)]];
-	[values addObject:[NSValue valueWithCATransform3D:CATransform3DMakeScale(1.0, 1.0, 1.0)]];
+	[values addObject:[NSValue valueWithCATransform3D:CATransform3DMakeScale(min, min, min)]];
+	[values addObject:[NSValue valueWithCATransform3D:CATransform3DMakeScale(max, max, max)]];
 	animation.values = values;
+
 	[aView.layer addAnimation:animation forKey:nil];
 }
-
 
 - (void)viewDidLoad
 {

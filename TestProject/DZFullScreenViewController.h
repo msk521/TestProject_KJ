@@ -7,10 +7,11 @@
 //
 
 #import "DZBaseViewController.h"
-
+typedef void(^CloseBlcok) (int);
 @interface DZFullScreenViewController : DZBaseViewController<UIScrollViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (copy,nonatomic) NSString *imageURL;
+@property (copy,nonatomic) CloseBlcok closeBlock;
 @end

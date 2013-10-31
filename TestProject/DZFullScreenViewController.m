@@ -14,6 +14,7 @@
 
 @implementation DZFullScreenViewController
 @synthesize imageURL;
+@synthesize closeBlock;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,7 +33,7 @@
 }
 
 - (IBAction)closeSelf:(id)sender {
-	[self.view removeFromSuperview];
+  self.closeBlock(0);
 }
 
 #pragma mark UIScrollView delegate methods
