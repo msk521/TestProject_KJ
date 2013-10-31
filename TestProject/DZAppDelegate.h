@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DZViewController.h"
 
 @interface DZAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) DZViewController *viewController;
+@property (nonatomic, assign) BOOL isScrollView;
 @end

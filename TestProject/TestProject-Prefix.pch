@@ -11,4 +11,12 @@
 #ifdef __OBJC__
 	#import <UIKit/UIKit.h>
 	#import <Foundation/Foundation.h>
+  #import "DZAppDelegate.h"
+  #import "DZProjectUtil.h"
+#endif
+
+#ifdef ISMOVENSLOG
+#    define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#    define NSLog(...) {}
 #endif
